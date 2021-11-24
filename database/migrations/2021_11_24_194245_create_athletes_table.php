@@ -28,7 +28,7 @@ class CreateAthletesTable extends Migration
             $table->timestamp('updated_at')->nullable(false)->useCurrent();
             $table->softDeletes();
 
-            $table->foreignId('sport_id');
+            $table->foreignId('sport_id')->constrained();
         });
     }
 
