@@ -19,10 +19,6 @@ class CreateTennisPlayersTable extends Migration
             $table->boolean('is_right_handed')->index();
             $table->unsignedSmallInteger('world_ranking')->index();
 
-            $table->timestamp('created_at')->nullable(false)->useCurrent();
-            $table->timestamp('updated_at')->nullable(false)->useCurrent();
-            $table->softDeletes();
-
             $table->foreignId('athlete_id')->constrained();
         });
     }
