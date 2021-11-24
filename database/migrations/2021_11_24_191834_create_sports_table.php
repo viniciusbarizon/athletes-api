@@ -14,8 +14,14 @@ class CreateSportsTable extends Migration
     public function up()
     {
         Schema::create('sports', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('id');
+
+            $table->string('sport', 10);
+
+            $table->timestamp('created_at')->nullable(false)->useCurrent();
+            $table->timestamp('updated_at')->nullable(false)->useCurrent();
+            $table->softDeletes();
+
         });
     }
 
