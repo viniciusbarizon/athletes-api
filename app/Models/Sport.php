@@ -17,4 +17,9 @@ class Sport extends Model
      * @var array
      */
     protected $guarded = [];
+
+    public function athletes()
+    {
+        return $this->hasMany(Athlete::class);
+    }
 }
