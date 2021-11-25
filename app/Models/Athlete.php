@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\FootballPlayer;
 use App\Models\Sport;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -17,6 +18,11 @@ class Athlete extends Model
      * @var array
      */
     protected $guarded = [];
+
+    public function footballPlayer()
+    {
+        return $this->hasOne(FootballPlayer::class);
+    }
 
     public function sport()
     {
