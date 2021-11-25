@@ -7,7 +7,7 @@ http://localhost/storage/database-model.pdf
 
 http://localhost/storage/database-model.mwb
 
-<b>Article about App\Actions:</b>
+<b>Article about the App\Actions:</b>
 
 https://freek.dev/1371-refactoring-to-actions
 
