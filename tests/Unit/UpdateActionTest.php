@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Actions\UpdateAction;
 use App\Models\Sport;
+use App\Http\Resources\SportResource;
 
 use Error;
 
@@ -21,12 +22,17 @@ class UpdateActionTest extends TestCase
     private int $id = 1;
     private string $model = Sport::class;
     private array $sport;
+    private string $resource = SportResource::class;
 
     public function test_update_must_have_new_values(): void
     {
         $this->setSportUsingTheFactory();
 
-        $this->actionExecute();
+        $this->assertEquals(
+            $this->resource,
+            get_class($this->actionExecute())
+        );
+
         $this->assertDatabaseHas('sports', $this->sport);
     }
 
@@ -65,6 +71,11 @@ class UpdateActionTest extends TestCase
 
     private function actionExecute(): mixed
     {
-        return (new UpdateAction)->execute(data: $this->sport, id: $this->id, model: $this->model);
+        return (new UpdateAction)->execute(
+            data: $this->sport,
+            id: $this->id,
+            model: $this->model,
+            resource: $this->resource
+        );
     }
 }

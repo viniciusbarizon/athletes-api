@@ -93,7 +93,8 @@ class ActionController extends Controller
         return (new UpdateAction)->execute(
             data: $request->all(),
             id: $id,
-            model: $this->model
+            model: $this->model,
+            resource: $this->resource
         );
     }
 
