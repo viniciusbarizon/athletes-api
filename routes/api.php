@@ -6,6 +6,7 @@ use App\Http\Controllers\FootballPositionController;
 use App\Http\Controllers\KarateBeltController;
 use App\Http\Controllers\KarateTypeController;
 use App\Http\Controllers\KaratecaController;
+use App\Http\Controllers\NoteController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resources([
     'athletes' => AthleteController::class,
-    'karatecas' => KaratecaController::class
+    'karatecas' => KaratecaController::class,
+    'notes' => NoteController::class
 ]);
 
 Route::prefix('football')->group(function () {

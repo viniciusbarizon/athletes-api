@@ -13,7 +13,7 @@ class FootballPlayerController extends ActionController
         parent::__construct(
             collection: FootballPlayerCollection::class,
             model: FootballPlayer::class,
-            orderBy: 'athlete_id',
+            orderByColumn: 'athlete_id',
             relationships: ['athlete', 'footballPosition']
         );
     }

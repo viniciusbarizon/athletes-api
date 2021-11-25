@@ -10,14 +10,21 @@ class ActionController extends Controller
 {
     private string $collection;
     private string $model;
-    private string $orderBy;
+    private string $orderByColumn;
     private array $relationships;
 
-    function __construct(string $collection, string $model, string $orderBy, array $relationships)
+    function __construct(
+        string $collection,
+        string $model,
+        string $orderByColumn,
+        string $orderByDirection = null,
+        array $relationships
+    )
     {
         $this->collection = $collection;
         $this->model = $model;
-        $this->orderBy = $orderBy;
+        $this->orderByColumn = $orderByColumn;
+        $this->orderByDirection = $orderByDirection;
         $this->relationships = $relationships;
     }
 
@@ -28,7 +35,13 @@ class ActionController extends Controller
      */
     public function index()
     {
-        return (new IndexAction)->execute($this->collection, $this->model, $this->orderBy, $this->relationships);
+        return (new IndexAction)->execute(
+            $this->collection,
+            $this->model,
+            $this->orderByColumn,
+            $this->orderByDirection,
+            $this->relationships
+        );
     }
 
     /**

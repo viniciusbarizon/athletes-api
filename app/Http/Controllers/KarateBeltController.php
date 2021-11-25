@@ -12,7 +12,7 @@ class KarateBeltController extends ActionController
         parent::__construct(
             collection: KarateBeltCollection::class,
             model: KarateBelt::class,
-            orderBy: 'color',
+            orderByColumn: 'color',
             relationships: ['karatecas']
         );
     }

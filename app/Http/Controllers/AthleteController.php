@@ -13,7 +13,7 @@ class AthleteController extends ActionController
         parent::__construct(
             collection: AthleteCollection::class,
             model: Athlete::class,
-            orderBy: 'name',
+            orderByColumn: 'name',
             relationships: ['footballPlayer', 'karateca', 'sport']
         );
     }

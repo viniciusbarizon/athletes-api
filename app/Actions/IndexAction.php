@@ -9,9 +9,10 @@ class IndexAction
     public function execute(
         string $collection,
         string $model,
-        string $orderBy,
+        string $orderByColumn,
+        string $orderByDirection = 'asc',
         array $relationships): ResourceCollection
     {
-        return new $collection($model::with($relationships)->orderBy($orderBy)->get());
+        return new $collection($model::with($relationships)->orderBy($orderByColumn, $orderByDirection)->get());
     }
 }

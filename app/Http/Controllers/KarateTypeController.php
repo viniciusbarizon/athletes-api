@@ -12,7 +12,7 @@ class KarateTypeController extends ActionController
         parent::__construct(
             collection: KarateTypeCollection::class,
             model: KarateType::class,
-            orderBy: 'type',
+            orderByColumn: 'type',
             relationships: ['karatecas']
         );
     }
