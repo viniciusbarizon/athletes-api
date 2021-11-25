@@ -11,13 +11,14 @@ class ActionController extends Controller
     private string $collection;
     private string $model;
     private string $orderByColumn;
+    private string $orderByDirection;
     private array $relationships;
 
     function __construct(
         string $collection,
         string $model,
         string $orderByColumn,
-        string $orderByDirection = null,
+        string $orderByDirection = 'asc',
         array $relationships
     )
     {

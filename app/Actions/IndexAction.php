@@ -10,7 +10,7 @@ class IndexAction
         string $collection,
         string $model,
         string $orderByColumn,
-        string $orderByDirection = 'asc',
+        string $orderByDirection,
         array $relationships): ResourceCollection
     {
         return new $collection($model::with($relationships)->orderBy($orderByColumn, $orderByDirection)->get());
