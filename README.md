@@ -4,6 +4,7 @@
 Database model:
 
 http://localhost/storage/database-model.pdf
+
 http://localhost/storage/database-model.mwb
 
 Article about App\Actions:
