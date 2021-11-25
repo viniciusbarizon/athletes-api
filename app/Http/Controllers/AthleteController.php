@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\ActionController;
 use App\Http\Resources\AthleteCollection;
 
 use App\Models\Athlete;

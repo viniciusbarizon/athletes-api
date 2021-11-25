@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AthleteController;
 use App\Http\Controllers\FootballPlayerController;
+use App\Http\Controllers\FootballPositionController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resources([
-    'athletes' => AthleteController::class,
-    'football-players' => FootballPlayerController::class
+    'athletes' => AthleteController::class
 ]);
+
+Route::prefix('football')->group(function () {
+    Route::resources([
+        'players' => FootballPlayerController::class,
+        'positions' => FootballPositionController::class
+    ]);
+});
