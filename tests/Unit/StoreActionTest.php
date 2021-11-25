@@ -61,7 +61,7 @@ class StoreActionTest extends TestCase
 
     private function actionExecute(): mixed
     {
-        return (new StoreAction)->execute($this->model, $this->karateType);
+        return (new StoreAction)->execute(data: $this->karateType, model: $this->model);
     }
 
     private function assertInsert(): void

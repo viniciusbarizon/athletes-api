@@ -43,11 +43,11 @@ class ActionController extends Controller
     public function index()
     {
         return (new IndexAction)->execute(
-            $this->collection,
-            $this->model,
-            $this->orderByColumn,
-            $this->orderByDirection,
-            $this->relationships
+            collection: $this->collection,
+            model: $this->model,
+            orderByColumn: $this->orderByColumn,
+            orderByDirection: $this->orderByDirection,
+            relationships: $this->relationships
         );
     }
 
@@ -59,7 +59,10 @@ class ActionController extends Controller
      */
     public function store(Request $request)
     {
-        return (new StoreAction)->execute($this->model, $request->all());
+        return (new StoreAction)->execute(
+            data: $request->all(),
+            model: $this->model
+        );
     }
 
     /**
@@ -70,7 +73,11 @@ class ActionController extends Controller
      */
     public function show($id)
     {
-        return (new ShowAction)->execute($id, $this->model, $this->resource);
+        return (new ShowAction)->execute(
+            id: $id,
+            model: $this->model,
+            resource: $this->resource
+        );
     }
 
     /**
@@ -82,7 +89,11 @@ class ActionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return (new UpdateAction)->execute($request->all(), $id, $this->model);
+        return (new UpdateAction)->execute(
+            data: $request->all(),
+            id: $id,
+            model: $this->model
+        );
     }
 
     /**

@@ -6,10 +6,10 @@ use Illuminate\Database\QueryException;
 
 class StoreAction
 {
-    public function execute(string $model, array $record)
+    public function execute(array $data, string $model)
     {
         try {
-            $model::create($record);
+            $model::create($data);
         }
         catch (QueryException) {
             return response('Please, do not use values used by other records', 403);
