@@ -3,6 +3,7 @@
 use App\Http\Controllers\AthleteController;
 use App\Http\Controllers\FootballPlayerController;
 use App\Http\Controllers\FootballPositionController;
+use App\Http\Controllers\KarateBeltController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,11 @@ Route::prefix('football')->group(function () {
     Route::resources([
         'players' => FootballPlayerController::class,
         'positions' => FootballPositionController::class
+    ]);
+});
+
+Route::prefix('karate')->group(function () {
+    Route::resources([
+        'belts' => KarateBeltController::class
     ]);
 });
