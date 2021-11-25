@@ -8,6 +8,7 @@ use App\Http\Controllers\KarateTypeController;
 use App\Http\Controllers\KaratecaController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\SportController;
+use App\Http\Controllers\TennisPlayerController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,8 @@ Route::resources([
     'athletes' => AthleteController::class,
     'karatecas' => KaratecaController::class,
     'notes' => NoteController::class,
-    'sports' => SportController::class
+    'sports' => SportController::class,
+    'tennis-players' => TennisPlayerController::class
 ]);
 
 Route::prefix('football')->group(function () {

@@ -17,4 +17,9 @@ class TennisPlayer extends Model
      * @var array
      */
     protected $guarded = [];
+
+    public function athlete()
+    {
+        return $this->belongsTo(Athlete::class);
+    }
 }

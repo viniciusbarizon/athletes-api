@@ -35,4 +35,9 @@ class Athlete extends Model
     {
         return $this->belongsTo(Sport::class);
     }
+
+    public function tennisPlayer()
+    {
+        return $this->hasOne(TennisPlayer::class);
+    }
 }
