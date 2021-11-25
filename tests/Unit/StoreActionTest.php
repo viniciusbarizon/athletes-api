@@ -76,6 +76,9 @@ class StoreActionTest extends TestCase
 
     private function assertInsert(): void
     {
-        $this->assertDatabaseHas('karate_types', ['type' => $this->karateType['type']]);
+        $this->assertDatabaseHas(
+            'karate_types',
+            ['type' => $this->karateType['type']]
+        );
     }
 }

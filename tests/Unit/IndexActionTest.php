@@ -67,11 +67,11 @@ class IndexActionTest extends TestCase
     private function actionExecute(): FootballPositionCollection
     {
         return (new IndexAction)->execute(
-            $this->collection,
-            $this->model,
-            $this->orderByColumn,
-            $this->orderByDirection,
-            $this->relationships
+            collection: $this->collection,
+            model: $this->model,
+            orderByColumn: $this->orderByColumn,
+            orderByDirection: $this->orderByDirection,
+            relationships: $this->relationships
         );
     }
 }

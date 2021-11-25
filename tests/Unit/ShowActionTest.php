@@ -54,6 +54,10 @@ class ShowActionTest extends TestCase
 
     private function actionExecute(): KarateBeltResource
     {
-        return (new ShowAction)->execute($this->id, $this->model, $this->resource);
+        return (new ShowAction)->execute(
+            id: $this->id,
+            model: $this->model,
+            resource: $this->resource
+        );
     }
 }
