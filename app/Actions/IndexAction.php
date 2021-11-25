@@ -7,8 +7,8 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class IndexAction
 {
-    public function execute(ResourceCollection $collection, Model $model, string $orderBy): ResourceCollection
+    public function execute(string $collection, Model $model, string $orderBy): ResourceCollection
     {
-        return $collection($model::orderBy($orderBy)->get());
+        return new $collection($model::orderBy($orderBy)->get());
     }
 }
