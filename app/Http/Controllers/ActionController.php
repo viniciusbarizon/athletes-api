@@ -8,11 +8,17 @@ use Illuminate\Http\Request;
 
 class ActionController extends Controller
 {
-    function __construct(string $collection, string $model, string $orderBy)
+    private string $collection;
+    private string $model;
+    private string $orderBy;
+    private array $relationships;
+
+    function __construct(string $collection, string $model, string $orderBy, array $relationships)
     {
         $this->collection = $collection;
         $this->model = $model;
         $this->orderBy = $orderBy;
+        $this->relationships = $relationships;
     }
 
     /**
@@ -22,7 +28,7 @@ class ActionController extends Controller
      */
     public function index()
     {
-        return (new IndexAction)->execute($this->collection, $this->model, $this->orderBy);
+        return (new IndexAction)->execute($this->collection, $this->model, $this->orderBy, $this->relationships);
     }
 
     /**
