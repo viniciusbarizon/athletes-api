@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use App\Actions\IndexAction;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class ActionController extends Controller
 {
-    function __construct(ResourceCollection $collection, string $model, string $orderBy)
+    function __construct(string $collection, string $model, string $orderBy)
     {
         $this->collection = $collection;
         $this->model = $model;
