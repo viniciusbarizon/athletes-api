@@ -1,13 +1,13 @@
 
 ## App
 
-Database model:
+<b>Database model:</b>
 
 http://localhost/storage/database-model.pdf
 
 http://localhost/storage/database-model.mwb
 
-Article about App\Actions:
+<b>Article about App\Actions:</b>
 
 https://freek.dev/1371-refactoring-to-actions
 
