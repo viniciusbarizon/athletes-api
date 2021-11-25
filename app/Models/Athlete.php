@@ -2,9 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\FootballPlayer;
-use App\Models\Sport;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,6 +19,11 @@ class Athlete extends Model
     public function footballPlayer()
     {
         return $this->hasOne(FootballPlayer::class);
+    }
+
+    public function karateca()
+    {
+        return $this->hasOne(Karateca::class);
     }
 
     public function sport()
