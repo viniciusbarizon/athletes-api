@@ -13,6 +13,8 @@ class IndexAction
         string $orderByDirection,
         array $relationships): ResourceCollection
     {
-        return new $collection($model::with($relationships)->orderBy($orderByColumn, $orderByDirection)->get());
+        return new $collection(
+            $model::with($relationships)->orderBy($orderByColumn, $orderByDirection)->get()
+        );
     }
 }

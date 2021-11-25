@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Actions\StoreAction;
 use App\Models\KarateType;
+use App\Http\Resources\KarateTypeResource;
 
 use Error;
 
@@ -19,12 +20,17 @@ class StoreActionTest extends TestCase
 
     private string $model = KarateType::class;
     private array $karateType;
+    private string $resource = KarateTypeResource::class;
 
     public function test_model_found_and_data_is_correct_must_insert_a_new_karate_type(): void
     {
         $this->setKarateTypeUsingTheFactory();
 
-        $this->actionExecute();
+        $this->assertEquals(
+            $this->resource,
+            get_class($this->actionExecute())
+        );
+
         $this->assertInsert();
     }
 
@@ -61,7 +67,11 @@ class StoreActionTest extends TestCase
 
     private function actionExecute(): mixed
     {
-        return (new StoreAction)->execute(data: $this->karateType, model: $this->model);
+        return (new StoreAction)->execute(
+            data: $this->karateType,
+            model: $this->model,
+            resource: $this->resource
+        );
     }
 
     private function assertInsert(): void

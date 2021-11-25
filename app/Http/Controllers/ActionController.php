@@ -62,7 +62,8 @@ class ActionController extends Controller
     {
         return (new StoreAction)->execute(
             data: $request->all(),
-            model: $this->model
+            model: $this->model,
+            resource: $this->resource
         );
     }
 
