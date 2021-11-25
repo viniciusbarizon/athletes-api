@@ -23,9 +23,7 @@ class IndexActionTest extends TestCase
 
     public function test_model_found_must_return_the_football_position_collection(): void
     {
-        $this->actionExecute();
-
-        $this->assertEquals(FootballPositionCollection::class, get_class($this->actionReturn));
+        $this->assertEquals($this->collection, get_class($this->actionExecute()));
     }
 
     public function test_collection_not_found_must_return_error_exception(): void
@@ -66,9 +64,9 @@ class IndexActionTest extends TestCase
         $this->actionExecute();
     }
 
-    private function actionExecute(): void
+    private function actionExecute(): FootballPositionCollection
     {
-        $this->actionReturn = (new IndexAction)->execute(
+        return (new IndexAction)->execute(
             $this->collection,
             $this->model,
             $this->orderByColumn,
