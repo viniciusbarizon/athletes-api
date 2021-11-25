@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actions\IndexAction;
 use App\Actions\ShowAction;
+use App\Actions\StoreAction;
 
 use Illuminate\Http\Request;
 
@@ -50,16 +51,6 @@ class ActionController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -67,7 +58,7 @@ class ActionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return (new StoreAction)->execute($this->model, $request->all());
     }
 
     /**
@@ -79,17 +70,6 @@ class ActionController extends Controller
     public function show($id)
     {
         return (new ShowAction)->execute($id, $this->model, $this->resource);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
