@@ -10,7 +10,7 @@ class UpdateAction
     {
         try {
             return new $resource(
-                $model::findOrFail($id)->update($data)
+                tap($model::findOrFail($id))->update($data)
             );
         }
         catch (QueryException) {
