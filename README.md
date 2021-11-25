@@ -1,3 +1,16 @@
+
+## App
+
+Database model:
+
+http://localhost/storage/database-model.pdf
+http://localhost/storage/database-model.mwb
+
+Article about App\Actions:
+
+https://freek.dev/1371-refactoring-to-actions
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
