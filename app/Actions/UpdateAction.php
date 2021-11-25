@@ -2,6 +2,8 @@
 
 namespace App\Actions;
 
+use Illuminate\Database\QueryException;
+
 class UpdateAction
 {
     public function execute(array $data, int $id, string $model)
