@@ -26,6 +26,11 @@ class Athlete extends Model
         return $this->hasOne(Karateca::class);
     }
 
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
+
     public function sport()
     {
         return $this->belongsTo(Sport::class);

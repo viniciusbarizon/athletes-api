@@ -14,7 +14,7 @@ class AthleteController extends ActionController
             collection: AthleteCollection::class,
             model: Athlete::class,
             orderByColumn: 'name',
-            relationships: ['footballPlayer', 'karateca', 'sport']
+            relationships: ['footballPlayer', 'karateca', 'notes', 'sport']
         );
     }
 }

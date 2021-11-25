@@ -14,7 +14,7 @@ class NoteController extends ActionController
             model: Note::class,
             orderByColumn: 'created_at',
             orderByDirection: 'desc',
-            relationships: ['karatecas']
+            relationships: ['athlete']
         );
     }
 }
