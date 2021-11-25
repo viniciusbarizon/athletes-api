@@ -16,6 +16,10 @@ class CreateKaratecasTable extends Migration
         Schema::create('karatecas', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->timestamp('created_at')->nullable(false)->useCurrent();
+            $table->timestamp('updated_at')->nullable(false)->useCurrent();
+            $table->softDeletes();
+
             $table->foreignId('athlete_id')->constrained();
             $table->foreignId('karate_belt_id')->constrained();
             $table->foreignId('karate_type_id')->constrained();

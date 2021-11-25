@@ -18,6 +18,10 @@ class CreateFootballPlayersTable extends Migration
 
             $table->boolean('is_right_handed')->index();
 
+            $table->timestamp('created_at')->nullable(false)->useCurrent();
+            $table->timestamp('updated_at')->nullable(false)->useCurrent();
+            $table->softDeletes();
+
             $table->foreignId('athlete_id')->constrained();
             $table->foreignId('football_position_id')->constrained();
         });
