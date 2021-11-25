@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\DestroyAction;
 use App\Actions\IndexAction;
 use App\Actions\ShowAction;
 use App\Actions\StoreAction;
@@ -104,6 +105,6 @@ class ActionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        (new DestroyAction)->execute(id: $id, model: $this->model);
     }
 }
