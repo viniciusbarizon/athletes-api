@@ -76,5 +76,4 @@ class IndexActionTest extends TestCase
             $this->relationships
         );
     }
-
 }
