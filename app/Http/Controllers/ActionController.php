@@ -105,6 +105,6 @@ class ActionController extends Controller
      */
     public function destroy($id)
     {
-        (new DestroyAction)->execute(id: $id, model: $this->model);
+        (new DestroyAction)->execute(id: $id, model: $this->model, resource: $this->resource);
     }
 }

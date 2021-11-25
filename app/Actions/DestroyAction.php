@@ -2,10 +2,12 @@
 
 namespace App\Actions;
 
+use Illuminate\Http\Resources\Json\JsonResource;
+
 class DestroyAction
 {
-    public function execute($id, $model)
+    public function execute($id, $model, $resource): JsonResource
     {
-        $model::findOrFail($id)->delete();
+        return new $resource($model::findOrFail($id)->delete());
     }
 }
