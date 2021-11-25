@@ -36,5 +36,4 @@ class UpdateActionTest extends TestCase
     {
         (new UpdateAction)->execute(data: $this->sport, id: $this->id, model: $this->model);
     }
-
 }
