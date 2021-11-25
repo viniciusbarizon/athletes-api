@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\NoteCollection;
+use App\Http\Resources\NoteResource;
+
 use App\Models\Note;
 
 class NoteController extends ActionController
@@ -14,7 +16,8 @@ class NoteController extends ActionController
             model: Note::class,
             orderByColumn: 'created_at',
             orderByDirection: 'desc',
-            relationships: ['athlete']
+            relationships: ['athlete'],
+            resource: NoteResource::class
         );
     }
 }

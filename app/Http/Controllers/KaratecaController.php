@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\KaratecaCollection;
+use App\Http\Resources\KaratecaResource;
+
 use App\Models\Karateca;
 
 class KaratecaController extends ActionController
@@ -13,7 +15,8 @@ class KaratecaController extends ActionController
             collection: KaratecaCollection::class,
             model: Karateca::class,
             orderByColumn: 'athlete_id',
-            relationships: ['athlete', 'belt', 'type']
+            relationships: ['athlete', 'belt', 'type'],
+            resource: KaratecaResource::class
         );
     }
 }

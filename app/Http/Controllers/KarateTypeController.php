@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\KarateTypeCollection;
+use App\Http\Resources\KarateTypeResource;
+
 use App\Models\KarateType;
 
 class KarateTypeController extends ActionController
@@ -13,7 +15,8 @@ class KarateTypeController extends ActionController
             collection: KarateTypeCollection::class,
             model: KarateType::class,
             orderByColumn: 'type',
-            relationships: ['karatecas']
+            relationships: ['karatecas'],
+            resource: KarateTypeResource::class
         );
     }
 }

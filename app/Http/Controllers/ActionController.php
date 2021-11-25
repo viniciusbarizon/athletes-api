@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\IndexAction;
+use App\Actions\ShowAction;
 
 use Illuminate\Http\Request;
 
@@ -13,13 +14,15 @@ class ActionController extends Controller
     private string $orderByColumn;
     private string $orderByDirection;
     private array $relationships;
+    private string $resource;
 
     function __construct(
         string $collection,
         string $model,
         string $orderByColumn,
         string $orderByDirection = 'asc',
-        array $relationships
+        array $relationships,
+        string $resource
     )
     {
         $this->collection = $collection;
@@ -27,6 +30,7 @@ class ActionController extends Controller
         $this->orderByColumn = $orderByColumn;
         $this->orderByDirection = $orderByDirection;
         $this->relationships = $relationships;
+        $this->resource = $resource;
     }
 
     /**
@@ -74,7 +78,7 @@ class ActionController extends Controller
      */
     public function show($id)
     {
-        //
+        return (new ShowAction)->execute($id, $this->model, $this->resource);
     }
 
     /**

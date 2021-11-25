@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\KarateBeltCollection;
+use App\Http\Resources\KarateBeltResource;
+
 use App\Models\KarateBelt;
 
 class KarateBeltController extends ActionController
@@ -13,7 +15,8 @@ class KarateBeltController extends ActionController
             collection: KarateBeltCollection::class,
             model: KarateBelt::class,
             orderByColumn: 'color',
-            relationships: ['karatecas']
+            relationships: ['karatecas'],
+            resource: KarateBeltResource::class
         );
     }
 }

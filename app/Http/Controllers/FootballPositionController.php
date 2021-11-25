@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\FootballPositionCollection;
+use App\Http\Resources\FootballPositionResource;
+
 use App\Models\FootballPosition;
 
 class FootballPositionController extends ActionController
@@ -13,7 +15,8 @@ class FootballPositionController extends ActionController
             collection: FootballPositionCollection::class,
             model: FootballPosition::class,
             orderByColumn: 'position',
-            relationships: ['footballPlayer']
+            relationships: ['footballPlayer'],
+            resource: FootballPositionResource::class
         );
     }
 }

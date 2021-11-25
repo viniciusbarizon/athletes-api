@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\SportCollection;
+use App\Http\Resources\SportResource;
+
 use App\Models\Sport;
 
 class SportController extends ActionController
@@ -13,7 +15,8 @@ class SportController extends ActionController
             collection: SportCollection::class,
             model: Sport::class,
             orderByColumn: 'sport',
-            relationships: ['athletes']
+            relationships: ['athletes'],
+            resource: SportResource::class
         );
     }
 }
