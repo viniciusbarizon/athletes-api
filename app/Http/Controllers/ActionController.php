@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Actions\IndexAction;
 use App\Actions\ShowAction;
 use App\Actions\StoreAction;
+use App\Actions\UpdateAction;
 
 use Illuminate\Http\Request;
 
@@ -81,7 +82,7 @@ class ActionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return (new UpdateAction)->execute($request->all(), $id, $this->model);
     }
 
     /**
