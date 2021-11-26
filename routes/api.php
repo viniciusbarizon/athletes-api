@@ -28,7 +28,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resources([
+Route::apiResources([
     'athletes' => AthleteController::class,
     'karatecas' => KaratecaController::class,
     'notes' => NoteController::class,
